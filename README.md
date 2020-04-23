@@ -1,39 +1,33 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# Flask Mongo Template
+This Flask template is designed for Gitpod and is based on CodeInstitute's template. It comes with a `.gitignore` file, two helper scripts and an `app.py` with most of the `imports` defined.
 
-Welcome kunxin-chor,
+## requirements.txt
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project.
+The requirements.txt include dependencies for:
 
-## Gitpod Reminders
+1. Flask
+2. pymongo
+3. pytest
+4. load-dotenv
+5. flask-login
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+To install, run:
+  pip3 install -r requirements.txt
 
-`python3 -m http.server`
 
-A blue button should appear to click: *Make Public*,
+## Helper script: start-mongo.sh
+If you wish to use the local instance of Mongo client, simply follow the steps below:
 
-Another blue button should appear to click: *Open Browser*.
+1. Create a new directory `data/db` in the Explorer panel
+2. Enable execution permission for the file `start-mongo.sh` by typing the following in the terminal:
+  chmod 775 start-mongo.sh
+  
+From now on, you can run the local instance of Mongo by typing:
+  ./start-mongo.sh
+  
+## Helper script: generate Flask keys
+If you wish to use sessions in Flask, you must give the app a secret key. You can generate one with the `generate-key` script:
+  python3 generate-key.py
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A blue button should appear to click: *Make Public*,
-
-Another blue button should appear to click: *Open Browser*.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the backend lessons.
-
-## Updates Since The Instructional Video
-
-We continually tweak and adjust this template to help give you the best experience. Here are the updates since the original video was made:
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+Copy and paste the string between the quotes and set it as the `SECRET_KEY` in the `.env` file
+ 
